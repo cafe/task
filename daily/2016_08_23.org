@@ -30,7 +30,7 @@ utotal = [0.0, 0.2, 0.4, ..., 6.0] # 31-lement array
 le = count((x)->x <= ue, utotal)
 #+END_SRC
 
-The problem is the =l_{e}= value shown above. Theoretically it should be =30= (=6.0= falls on the 30th segment) instead of =31=, so =t_{e}= should be =1.0= instead of =0.0=. Since =u_{e}= is =6.0=, which is accidentally the 31th element of utotal.
+The problem is the l_{e} value shown above. Theoretically it should be =30= (=6.0= falls on the 30th segment) instead of =31=, so t_{e} should be =1.0= instead of =0.0=. Since u_{e} is =6.0=, which is accidentally the 31th element of utotal.
 
 Thus we change the code accordingly:
 
@@ -41,7 +41,7 @@ le = count((x)->x < ue, utotal)
 
 and now we get =30=. 
 
-Also updated =tParaNew()= to make sure all the =s_arc= values fall on =[0.0, 1.0]=. Note that sometimes the numerical computation will give results like =0.20000000000000018= or =-0.00000000000000018=, which actually should be =0.2= or =0.0=. So we need to handle such situations in =tParaNew()= to make sure that =t_{e}= is =1.0=:
+Also updated =tParaNew()= to make sure all the =s_arc= values fall on =[0.0, 1.0]=. Note that sometimes the numerical computation will give results like =0.20000000000000018= or =-0.00000000000000018=, which actually should be =0.2= or =0.0=. So we need to handle such situations in =tParaNew()= to make sure that t_{e} is =1.0=:
 
 #+BEGIN_SRC julia
 if s_arc<=0.0 # in case some values like -0.00000000000000018
