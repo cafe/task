@@ -1,0 +1,1 @@
+- Move all the GitHub page related stuff to another account (since I don't want to manage multiple SSH keys for different accounts). From now on, all the stuff stored on this account are mostly for online editing while another account is used for stuff handled with Git bash. 
