@@ -1,0 +1,16 @@
+* Code analysis
+** generalClo()
+Following 2014 paper, all the parameters are set to be 
+
+#+BEGIN_EXAMPLE
+u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT_sameSeg.h5"
+#+END_EXAMPLE
+
+=generalClo(u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT_sameSeg.h5")= analysis:
+
+| Varialbe | Value |
+|----------+-------|
+|   s_0
+
+
+
