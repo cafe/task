@@ -6,11 +6,13 @@ Following 2014 paper, all the parameters are set to be
 u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT_sameSeg.h5"
 #+END_EXAMPLE
 
+函数
+
 #+BEGIN_SRC julia
 generalClo(u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT_sameSeg.h5")
 #+END_SRC
 
-的中间结果:
+运行的中间结果:
 
 | Varialbe | Value |
 |----------+-------|
@@ -23,7 +25,18 @@ generalClo(u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="L
 |   t_{s}  |  0.0  |
 |   t_{e}  | *0.0* |
 
-问题就出在了上面的l_{e}上面. 理论上它应该是第30段, 而不是第31段, 因此t_{e}也应为1.0而不是0.0.
+#+BEGIN_SRC julia
+utotal = [0.0, 0.2, 0.4, ..., 6.0] # 31-lement array
+le = count((x)->x <= ue, utotal)
+#+END_SRC
 
+问题就出在了上面的l_{e}上面. 理论上它应该是第30段, 而不是第31段, 因此t_{e}也应为1.0而不是0.0. l_{e}的计算当中u_{e}就是6.0, 刚好就是utotal第31个元素. 因此我们如果将上面l_{e}的计算改成
+
+#+BEGIN_SRC julia
+ls = count((x)->x <= us, utotal)
+le = count((x)->x < ue, utotal)
+#+END_SRC
+
+即可以得到30. 
 
 
