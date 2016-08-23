@@ -10,7 +10,7 @@ u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT_sameSeg.
 
 | Varialbe | Value |
 |----------+-------|
-|   s_0
+|   s_{0}
 
 
 
