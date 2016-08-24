@@ -55,13 +55,25 @@ end
 * =errCurT()=
 =L_array= stores all the arc length values of each segment and all the values should be the /same/. According to the 2014 paper, the intermediate evaluation shows that it's a 30-element array =[0.2, 0.2, ..., 0.2]=.
 
-The original =sSample= is a 1D array and needs to be modified to hold =num= x =sub+1= (30x11) elements, which is similar to =tSample=.
-
 | Varialbe | Value |
 |----------+-------|
 |    num   |  30   |
 |  num_sub |  10   |
 |     u    |  6.0  |
 
-- =num=: number of segments (30, based on the lookup table)
-- =num_sub=: number of subsegments (10, can be changed to a larger value and mainly for plotting purpose)
+- =num=: number of segments (=30= by default, based on the lookup table)
+- =num_sub=: number of subsegments (=10= by default, can be changed to a larger value and mainly for plotting purpose)
+- =tSample= is a 2D array. Dimension: =num= x =(sub+1)= (30x11)
+- =sSample= is a 1D array and needs to be modified to hold =num= x =(sub+1)= (30x11=330) elements, which is similar to =tSample=.
+
+* Result
+=uniArcLengthOne()= is called by =errCurT()= and the accuracy in =uniArcLengthOne()= is set to be =1.0e-12= for the following results, i.e., 
+
+#+BEGIN_SRC julia
+while maximum(abs(s-st)) > 1.0e-12
+    ...
+end
+#+END_SRC
+
+
+
