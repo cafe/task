@@ -27,7 +27,7 @@ and get the intermediate results:
 |   t_{e}  | *0.0* |
 
 #+BEGIN_SRC julia
-utotal = [0.0, 0.2, 0.4, ..., 6.0] # 31-lement array
+utotal = [0.0, 0.2, 0.4, ..., 6.0] # 31-element array
 le = count((x)->x <= ue, utotal)
 #+END_SRC
 
@@ -55,3 +55,13 @@ end
 * =errCurT()=
 =L_array= stores all the arc length values of each segment and all the values should be the /same/. According to the 2014 paper, the intermediate evaluation shows that it's a 30-element array =[0.2, 0.2, ..., 0.2]=.
 
+The original =sSample= is a 1D array and needs to be modified to hold =num= x =sub+1= (30x11) elements, which is similar to =tSample=.
+
+| Varialbe | Value |
+|----------+-------|
+|    num   |  30   |
+|  num_sub |  10   |
+|     u    |  6.0  |
+
+- =num=: number of segments (30, based on the lookup table)
+- =num_sub=: number of subsegments (10, can be changed to a larger value and mainly for plotting purpose)
