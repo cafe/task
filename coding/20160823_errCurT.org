@@ -1,5 +1,6 @@
-* =errCurT()= Code analysis
-** =generalClo()=
+#+TITLE: =errCurT()= Code analysis
+
+* =generalClo()=
 Following 2014 paper, all the parameters are set to be 
 
 #+BEGIN_EXAMPLE
@@ -50,4 +51,7 @@ elseif s_arc>=L # in case some values like 0.20000000000000018
     return 1.0
 end
 #+END_SRC
+
+* =errCurT()=
+=L_array= stores all the arc length values of each segment and all the values should be the /same/. According to the 2014 paper, the intermediate evaluation shows that it's a 30-element array =[0.2, 0.2, ..., 0.2]=.
 
