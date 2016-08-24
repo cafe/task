@@ -13,7 +13,6 @@ errTRO(LookupTableFile::ASCIIString="Clothoid_LT_0.2.txt",
 
 If necessary we can change ="Clothoid_LT_0.2.txt"= to ="Clothoid_LT_0.2_12.0.txt"= to test a longer curve.
 
-#+BEGIN_CENTER
-Note: Though it seems that for longer segments the TRO approximation can still keep the error within the bound. The truth is that the curve cannot be preserved when arc length becomes larger. Imaging a segment following the above parameters, e.g., =s= runs from =20.0= to =20.2=. In such situation, the arc length still keeps unchanged and the approximated curve, i.e., the circular arc is not an "arc" anymore. Actually it may be a complete circle. Though the coord error is within bound, the 
-#+END_CENTER
+*Note*: Though it seems that for longer segments the TRO approximation can still keep the error within the bound. The truth is that the curve cannot be preserved when arc length becomes larger. Imaging a segment following the above parameters, e.g., =s= runs from =20.0= to =20.2=. In such situation, the arc length still keeps unchanged and the approximated curve, i.e., the circular arc is not an "arc" anymore. Actually it may be a complete circle. Though the coord error is within bound, the 
+
 
