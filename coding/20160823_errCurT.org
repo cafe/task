@@ -75,7 +75,24 @@ while maximum(abs(s-st)) > 1.0e-12
 end
 #+END_SRC
 
-- Fig: =num_sub= = =2=
+** Coordinate Error (Position Error)
+
+- =num_sub= = =2=:
   [[./img/num_sub_2.png?raw=true]]
 
+- =num_sub= = =5=:
+  [[./img/num_sub_5.png?raw=true]]
+  
+- =num_sub= = =10=:
+  [[./img/num_sub_10.png?raw=true]]
 
+- =num_sub= = =20=:
+  [[./img/num_sub_20.png?raw=true]]
+
+- =num_sub= = =50=:
+  [[./img/num_sub_50.png?raw=true]]
+  
+- =num_sub= = =100=:
+  [[./img/num_sub_100.png?raw=true]]
+  
+It can be seen that all the coordinate errors are consistent and below =8e-7=. Also the "wavy" shape is clearer when =num_sub= becomes larger because for each segment, the coordinate error should be zero at both ends.
