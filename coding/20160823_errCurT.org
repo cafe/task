@@ -120,3 +120,25 @@ It can be seen that all the coordinate errors are consistent and below =8e-7=. A
   
 - =num_sub= = =100=:
   [[./img/CurErr_num_sub_100.png?raw=true]]
+
+** Theta Error
+
+=thetaClo= and =thetaB= are 330-element =Float64= array, i.e., =num= x =(num_sub+1)=.
+
+- =num_sub= = =2=:
+  [[./img/ThetaErr_num_sub_2.png?raw=true]]
+
+- =num_sub= = =5=:
+  [[./img/ThetaErr_num_sub_5.png?raw=true]]
+  
+- =num_sub= = =10=:
+  [[./img/ThetaErr_num_sub_10.png?raw=true]]
+
+- =num_sub= = =20=:
+  [[./img/ThetaErr_num_sub_20.png?raw=true]]
+
+- =num_sub= = =50=:
+  [[./img/ThetaErr_num_sub_50.png?raw=true]]
+  
+- =num_sub= = =100=:
+  [[./img/ThetaErr_num_sub_100.png?raw=true]]
