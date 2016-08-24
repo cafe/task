@@ -1,1 +1,3 @@
 - Move all the GitHub page related stuff to another account (since I don't want to manage multiple SSH keys for different accounts). From now on, all the stuff stored on this account is mostly for online editing while another account is used for stuff handled with Git bash. 
+
+- Modify =errCurT()= function to make sure it can be used for *both* uniform length and non-uniform length evaluations.
