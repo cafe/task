@@ -1,0 +1,19 @@
+* =errCurT()= for non-uniform length evaluation
+
+Source: =cloerr.jl=
+
+Previously we have modified the =errCurT()= to work with uniformly distributed arc length error evaluation (mainly for TRO2014 comparison purpose). Now we need to handle the non-uniform case.
+
+1. Set parameters for =lookupTable()= and =generalClo()= for testing
+
+  #+BEGIN_SRC julia
+  lookupTable(num::Int64=100, theta_max=0.5*pi, sigma=1.0) 
+  generalClo(u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT.h5")
+  errCurT(num_sub::Int64=10, u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0) 
+  #+END_SRC
+  
+  Considering the max value in =utotal= array is only =17.5227= with above parameters applied to =lookupTable()=, the parameters in =generalClo()= cannot exceed this limit.
+  
+  =tSample= is a =13x101= matrix.
+  
+  
