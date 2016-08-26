@@ -16,5 +16,19 @@ Previously we have modified the =errCurT()= to work with uniformly distributed a
   
 2. Resuts
   
+  - *Cur errors* with different \sigma values. Here the length =u= can be changed accordingly to view the stable results. It can be seen that the cur error becomes stable and consistent even with different \sigma values.
   
-  
+    1. \sigma is =0.5=:
+      [[./img/nonuniform_sigma0.5_theta0.5pi_curerr.png?raw=true]]
+      
+    2. \sigma is =1.0=:
+      [[./img/nonuniform_sigma1.0_theta0.5pi_curerr.png?raw=true]]
+      
+    3. \sigma is =2.0=:
+      [[./img/nonuniform_sigma2.0_theta0.5pi_curerr.png?raw=true]]
+      
+    4. \sigma is =5.0=:
+      [[./img/nonuniform_sigma5.0_theta0.5pi_curerr.png?raw=true]]
+      
+    5. \sigma is =10.0=:
+      [[./img/nonuniform_sigma10.0_theta0.5pi_curerr.png?raw=true]]
