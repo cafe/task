@@ -9,7 +9,7 @@ Previously we have modified the =errCurT()= to work with uniformly distributed a
   #+BEGIN_SRC julia
   lookupTable(num::Int64=500, theta_max=0.5*pi, sigma=1.0)
   generalClo(u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT.h5")
-  errCurT(num_sub::Int64=10, u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0) 
+  errCurT(num_sub::Int64=50, u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0) 
   #+END_SRC
   
   Considering the max value in =utotal= array is only =39.5434= with above parameters applied to =lookupTable()=, the parameters in =generalClo()= cannot exceed this limit. Also we changed the return values of =generalClo()= to include the length information of the original curve. (Here we only consider the simplest case: the arc length changes from =0= to a positive value.)
@@ -32,3 +32,14 @@ Previously we have modified the =errCurT()= to work with uniformly distributed a
       
     5. \sigma is =10.0=:
       [[./img/nonuniform_sigma10.0_theta0.5pi_curerr.png?raw=true]]
+
+  - *Coord error* with different \sigma values. They are not stable as cur errors.
+  
+    1. \sigma is =0.5=:
+      [[./img/nonuniform_sigma0.1_theta0.5pi_coorderr.png?raw=true]]
+      
+    2. \sigma is =1.0=:
+      [[./img/nonuniform_sigma1.0_theta0.5pi_coorderr.png?raw=true]]
+      
+    3. \sigma is =10.0=:
+      [[./img/nonuniform_sigma10.0_theta0.5pi_coorderr.png?raw=true]]
