@@ -1,0 +1,5 @@
+#+TITLE: RBC
+
+[1] 2007. Trajectory Generation based on Rational Bezier Curves as Clothoids
+[2] 2008. Real-time Clothoid approximation by Rational Bezier curves
+
