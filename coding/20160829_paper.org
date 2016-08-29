@@ -1,0 +1,2 @@
+2011. On Generating Continuous-Curvature Paths for Line Following Problem with Curvature and Sharpness Constraints
+2006. A smooth, obstacle-avoiding curve (Computer Graphics)
