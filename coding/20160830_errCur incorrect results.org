@@ -1,0 +1,90 @@
+#+TITLE: =errCur()= Results
+Source: =cloerr.jl=
+
+* Presetting
+
+Since in =errCurT()=, there are totally =30= segments. Thus here =numplotseg= should be mulplied by =30= to make sure the plot has the same points with =errCurT()=. But when the number is larger than =50=, it takes too long to calculate errors. So we just use fewer points.
+
+#+BEGIN_SRC julia
+generalClo(u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0, filename="LUT_sameSeg.h5")
+errCur(numplotseg::Int64=10, u=6.0, sigma=1.0, kappa0=0.0, theta0=0.0, x0=0.0, y0=0.0)
+#+END_SRC
+
+* Result
+
+
+=uniArcLength()= is called by =errCur()= and the accuracy in =uniArcLengthOne()= is set to be =1.0e-12= for the following results, i.e., 
+
+#+BEGIN_SRC julia
+while maximum(abs(s-st)) > 1.0e-12
+    ...
+end
+#+END_SRC
+
+** Coordinate Error (Position Error)
+
+=coordB= and =coordClo= are 330-element array, i.e., =num= x =(num_sub+1)=, and each element is a 2-elementary array for storing =(x,y)= values.
+
+- =num_sub= = =2=:
+  [[./img/num_sub_2.png?raw=true]]
+
+- =num_sub= = =5=:
+  [[./img/num_sub_5.png?raw=true]]
+  
+- =num_sub= = =10=:
+  [[./img/num_sub_10.png?raw=true]]
+
+- =num_sub= = =20=:
+  [[./img/num_sub_20.png?raw=true]]
+
+- =num_sub= = =50=:
+  [[./img/num_sub_50.png?raw=true]]
+  
+- =num_sub= = =100=:
+  [[./img/num_sub_100.png?raw=true]]
+  
+It can be seen that all the coordinate errors are consistent and below =8e-7=. Also the "wavy" shape is clearer when =num_sub= becomes larger because for each segment, the coordinate error should be zero at both ends. So the type is array of arrays.
+
+** Curvature Error
+
+=curC= and =curB= are 330-element =Float64= array, i.e., =num= x =(num_sub+1)=.
+
+- =num_sub= = =2=:
+  [[./img/CurErr_num_sub_2.png?raw=true]]
+
+- =num_sub= = =5=:
+  [[./img/CurErr_num_sub_5.png?raw=true]]
+  
+- =num_sub= = =10=:
+  [[./img/CurErr_num_sub_10.png?raw=true]]
+
+- =num_sub= = =20=:
+  [[./img/CurErr_num_sub_20.png?raw=true]]
+
+- =num_sub= = =50=:
+  [[./img/CurErr_num_sub_50.png?raw=true]]
+  
+- =num_sub= = =100=:
+  [[./img/CurErr_num_sub_100.png?raw=true]]
+
+** Theta Error
+
+=thetaClo= and =thetaB= are 330-element =Float64= array, i.e., =num= x =(num_sub+1)=.
+
+- =num_sub= = =2=:
+  [[./img/ThetaErr_num_sub_2.png?raw=true]]
+
+- =num_sub= = =5=:
+  [[./img/ThetaErr_num_sub_5.png?raw=true]]
+  
+- =num_sub= = =10=:
+  [[./img/ThetaErr_num_sub_10.png?raw=true]]
+
+- =num_sub= = =20=:
+  [[./img/ThetaErr_num_sub_20.png?raw=true]]
+
+- =num_sub= = =50=:
+  [[./img/ThetaErr_num_sub_50.png?raw=true]]
+  
+- =num_sub= = =100=:
+  [[./img/ThetaErr_num_sub_100.png?raw=true]]
