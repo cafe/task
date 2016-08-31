@@ -1,0 +1,13 @@
+* 第 II 部分
+
+LUT中只能存有限个坐标点的值, 因此要决定出
+1. 曲线段的个数
+2. safe parameters:
+  1. c_{L}: sharpness of the basic curve
+  2. s_{L}: length of the basic curve
+  3. \Deltas_{L}: sampling interval
+
+面临的问题有二:
+1. basic curve仍需要数值方法计算, 因此会有误差 -- 补救方法: 可以offline computing以达到想要的精度(如机器精度).
+2. 在生成basic curve的LUT时需要做离散化和采样, 会有采样误差([[https://en.wikipedia.org/wiki/Sampling_error][sampling error]]) -- 补救方法: 计算落在采样点之间的点时采用插值. 因此最终的approximation error取决于两个因素: \Deltas_{L} 和插值效果.
+
