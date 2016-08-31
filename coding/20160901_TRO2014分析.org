@@ -1,3 +1,4 @@
+* 第 I 部分 (略)
 * 第 II 部分
 
 LUT中只能存有限个坐标点的值, 因此要决定出
@@ -11,3 +12,29 @@ LUT中只能存有限个坐标点的值, 因此要决定出
 1. basic curve仍需要数值方法计算, 因此会有误差 -- 补救方法: 可以offline computing以达到想要的精度(如机器精度).
 2. 在生成basic curve的LUT时需要做离散化和采样, 会有采样误差([[https://en.wikipedia.org/wiki/Sampling_error][sampling error]]) -- 补救方法: 计算落在采样点之间的点时采用插值. 因此最终的approximation error取决于两个因素: \Delta s_{L} 和插值效果.
 
+因此在下面的部分会先讨论插值方法, 然后是插值误差分析, 然后是决定各种合适的参数来满足给定精度.
+
+* 第 III 部分: 插值
+
+** 关于 continuity
+1. 作者提到圆弧插值导致 continuity between segments is not preserved. 但 dense sampling 可以使这个看起来不明显.
+2. 作者提到 [18] 中使用了穿过两个端点的圆弧, 但这种方法一来 decrease efficiency, 二来不方便估计最大误差, 因为在一个 sampling interval 里最大的误差并不随 s 单调递减.
+
+找寻 interpolation error 与 \Delta s_{L}, c_{L} 之间的关系, 于是先固定 c_{L} 为 =1= 不变. 然后比较误差与不同 \Delta s_{L} 之间的关系(文中取了三个值, 即图2中的 =1=, =0.5=, =0.25=). 发现如下规律:
+1. 最大误差出现在第一段末尾处.
+2. 最大误差随曲线长度 s_{L} 而减小, 最终会趋向于 zero (文中稍后解释说因为原曲线最终会converge to a point).
+
+最大误差记为 e_{im}. 通过观察(图3)或者说是stastic方法, 得出 e_{im} / \Delta s_{L}^{3} 是个定值. 即, LUT 中如果有n个点, 则误差是 O(1/n^{3}). 之后又用一些推导得出这一结论. 图3(a)中固定 c_{L} 为 =1=, (b)中固定 \Delta s_{L} 为 =0.1=. 从 (b) 中得出 e_{im}/c_{L} 是定值, 因此根据图3(b), 得出一个 e_{im} 的最终估计, 即式(8).
+
+作者还提到, 使用 nonconstant sampling interval 可能会提高精度, 但会提升计算负担.
+
+* 第 IV 部分: 决定各种参数
+
+** Wingding angle 与 length 限制
+限定 \Delta \theta_{max} (比如定为 \pi/2), 可得出 s 范围, 即式(9). 如果有人为指定最大长度 s_{max}, 则 s 范围为式(10).
+
+** 最小 scaling, 即 C 值. 也即最大 c 值 (C^2 = 1/c)
+一来极小的C值会使估计误差超出预设值, 二来在极端情况下, C 值非常小, 这时甚至超出LUT能近似的长度范围, 使LUT无法使用. 因此需要根据规定的误差设置C值范围. 因为当 C 值足够小时, 曲线曲率特别大, 最终会成为一个点. 因此当曲率特别大时(比如此时C的临界值 C_{min}), 我们直接用一个点来做近似即可. 这个临界值最终由式(13)确定. 求解它可以用普通的最优化方法得出 s_{d}/C 是个定值, 文中也没有赘述.
+
+** 最大 Scaling 值
+即sharpness很小, 因 s_{d}/C 为定值, 即误差与 C 成正比. 极端情况是直线情况, 可以通过求解最优化问题得到最大C值.
