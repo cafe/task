@@ -1,4 +1,5 @@
 * [[http://www.economist.com/news/china/21710001-foreign-firms-are-worried-china-adopts-tough-cyber-security-law][China adopts a tough cyber-security law]]
 
-- damning: 谴责的
-    Those damning words from James Zimmerman, chairman of the American Chamber of Commerce in China
+** notes
+   - damning: 谴责的
+     Those damning words from James Zimmerman, chairman of the American Chamber of Commerce in China
