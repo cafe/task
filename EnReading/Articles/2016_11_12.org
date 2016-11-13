@@ -1,0 +1,73 @@
+* [[http://www.economist.com/news/china/21710001-foreign-firms-are-worried-china-adopts-tough-cyber-security-law][China adopts a tough cyber-security law]]
+
+文章原标题 The noose tightens (绳索套紧了, noose主要指绞刑或套动物用的套索)
+
+- damning 谴责的
+
+  Those damning words from James Zimmerman, chairman of the American Chamber of Commerce in China.
+
+- sweeping 影响广泛的
+
+  describe his view of a sweeping new cyber-security law adopted on November 7th
+
+- dim 悲观的, 黯淡的
+  + businesspeople 商业人士
+  
+  Many foreign businesspeople agree with his dim assessment.
+
+- ostensibly 表面上
+  + malicious 恶意的
+
+  Though ostensibly designed to strengthen local networks against malicious hackers,
+
+- nationalist 民族主义
+  + Trojan horse 特洛伊木马
+
+  in fact the bill looks very much like a techno-nationalist Trojan horse.
+
+- ICT 信息与通信技术
+
+  The law affects both domestic and foreign firms operating on the Chinese mainland and covers a wide range of activity relating to use of the internet and information and communications technologies (ICT).
+
+- come into force 生效执行
+
+  It will not come into force until June next year, so it is not yet clear how the rules will be implemented.
+
+- problematic 困难的
+
+  Even so, several of them seem problematic.
+
+- multinational 跨国公司(n.), 跨国的(adj.)
+
+  This is a headache for multinationals, which typically rely on cross-border flows of business data.
+
+- thorny 困难的, 麻烦的
+  + provision 条款
+
+  Another thorny provision requires companies to get security certifications for important network equipment and software.
+
+- turn over 提交
+
+  Foreign firms fear this might be used to force them to turn over security keys and proprietary technologies, which could be passed on to state-owned rivals
+
+- overweening 自负的
+
+  Ironically, the overweening law may end up doing the opposite of what is intended.
+
+- bunker 掩体
+  + mentality 心态
+  + transnational 跨国的
+
+  Because threats to networks are increasingly transnational, taking a bunker mentality could make it harder for China to prevent attacks.
+
+- flawed 有缺陷的
+
+  the new rules are flawed because they do not encourage cross-border co-operation.
+
+- bleat 哭诉(v. 指以弱者的姿态讲话或抱怨)
+
+  If Chinese officials reject such talk as the mere bleating of foreigners, they should at least listen to Eric Xu.
+
+- eloquent 雄辩的, 有说服力的
+
+  That eloquent rejection of techno-nationalism came from a man who is co-chief executive of Huawei.
